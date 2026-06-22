@@ -1,5 +1,7 @@
 # Keygent
 
+<a href="https://www.producthunt.com/products/keygent?utm_source=badge-follow&utm_medium=badge&utm_source=badge-keygent" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/follow.svg?product_id=1252692&theme=light" alt="Keygent - Run&#0032;terminal&#0032;commands&#0032;with&#0032;safely&#0032;injected&#0032;env&#0032;vars | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
+
 Keygent is a lightweight CLI tool for running commands with injected environment variables in a safe and predictable way.
 
 It lets you temporarily override or add environment variables for a single command execution without affecting your system environment.
