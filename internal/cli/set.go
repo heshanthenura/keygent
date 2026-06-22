@@ -21,6 +21,10 @@ var setCommand = &cobra.Command{
 		envVars := args[:dashIndex]
 		commands := args[dashIndex:]
 
+		if len(commands) == 0 {
+			return fmt.Errorf("no command provided after --")
+		}
+
 		return runner.Run(envVars, commands)
 	},
 }
