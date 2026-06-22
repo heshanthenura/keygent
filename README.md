@@ -7,6 +7,7 @@ It lets you temporarily override or add environment variables for a single comma
 ## Features
 
 - Inject environment variables per command
+- Load environment variables from .env file
 - Override system environment safely
 - Supports quoted values
 - Cross platform (Windows, Linux, macOS)
@@ -33,7 +34,7 @@ go build -o keygent ./cmd/keygent
 
 ## Usage
 
-### Basic syntax
+- ### Basic syntax
 
 ```bash
 keygent set KEY=value -- command [args...]
@@ -51,7 +52,7 @@ Output:
 123
 ```
 
-### Multiple environment variables
+- ### Multiple environment variables
 
 ```bash
 keygent set NAME=Heshan AGE=22 -- node -e "console.log(process.env.NAME, process.env.AGE)"
@@ -63,13 +64,13 @@ Output:
 Heshan 22
 ```
 
-### Override system environment
+- ### Override system environment
 
 ```bash
 keygent set PATH=custom -- node -e "console.log(process.env.PATH)"
 ```
 
-### Using quoted values
+- ### Using quoted values
 
 ```bash
 keygent set MESSAGE="hello world" -- node -e "console.log(process.env.MESSAGE)"
@@ -81,6 +82,12 @@ Output:
 hello world
 ```
 
+- ### Load from `.env` file
+
+```bash
+keygent env .env -- node -e "console.log(process.env.MESSAGE)"
+```
+
 ## How it works
 
 Keygent:
@@ -90,9 +97,3 @@ Keygent:
 3. Builds a temporary environment
 4. Runs the target command with that environment
 5. Does NOT modify your system environment
-
-## Future improvements
-
-- `.env file support`
-- `--env-file` flag
-- shell mode (`--shell`)
